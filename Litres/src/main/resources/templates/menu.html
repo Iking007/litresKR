@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Меню Администратора</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="icon" href="https://digitalreviewboss.com/wp-content/uploads/2020/08/7-1.png">
+</head>
+<body>
+    <header th:insert="blocks/header :: header"></header>
+
+    <div style="margin-left: 20px">
+        <h2>Меню СуперПользователя</h2>
+        <a th:href="'/menu/form'">
+            <button class="btn btn-success" style="margin-bottom: 10px">Добавить книгу</button>
+        </a><br>
+        <a th:href="'/menu/all'">
+            <button  class="btn btn-success" style="margin-bottom: 10px">Список всех книг</button>
+        </a><br>
+        <a th:href="'/menu/users'">
+            <button  class="btn btn-success">Список всех пользователей</button>
+        </a>
+    </div>
+
+    <div th:if="${namePage}=='404'">
+        <div>
+            <h1>Такой страницы не существует</h1>
+        </div>
+    </div>
+
+    <footer th:insert="blocks/footer :: footer"></footer>
+</body>
+</html>

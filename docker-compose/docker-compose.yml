@@ -1,0 +1,18 @@
+version: '1'
+services:
+  java-server:
+    image: ea9c1b17a5d86f81df1122af04eb736fc2fceb40c7ebb6acb7a37ef2f7c7cbcd
+    restart: always
+    ports:
+      - "8080:8080"
+
+  db:
+    build: /docker/db
+    container_name: libDB
+    restart: always
+    environment:
+      POSTGRES_DB: "public"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "rootuser"
+    ports:
+      - "5432:5432"
